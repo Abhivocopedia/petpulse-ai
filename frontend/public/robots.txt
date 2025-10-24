@@ -1,9 +1,0 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Allow: /
-
-# Allow all pages to be crawled
-Disallow:
-
-# Sitemap location
-Sitemap: https://abhivocopedia.github.io/petpulse-ai/sitemap.xml
