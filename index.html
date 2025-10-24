@@ -633,15 +633,12 @@
         const CONFIG = {
             // 🔧 UPDATE THIS WITH YOUR VULTR SERVER IP/DOMAIN
             BACKEND_URL: 'http://65.20.87.234/petpulseAI', // Replace with your actual Vultr server IP/domain
-            API_BASE_URL: 'http://65.20.87.234/api', // Replace with your actual backend API URL
+            API_BASE_URL: 'http://65.20.87.234:5000/petpulseAI', // Replace with your actual backend API URL
 
-            // Your frontend URL
-            FRONTEND_URL: 'https://abhivocopedia.github.io/petpulse-ai/',
-        };
 
             // Features
-            AI_ENABLED: true,
-            GOOGLE_AUTH_ENABLED: true,
+            AI_ENABLED: false,
+            GOOGLE_AUTH_ENABLED: false,
             
             // GitHub Pages specific
             IS_GITHUB_PAGES: window.location.hostname.includes('github.io'),
@@ -670,7 +667,7 @@
             // Detect the correct API base URL based on environment
             detectApiBaseUrl() {
                 // If custom backend URL is configured, use it
-                if (CONFIG.API_BASE_URL && CONFIG.API_BASE_URL !== 'https://65.20.87.234/api') {
+                if (CONFIG.API_BASE_URL && CONFIG.API_BASE_URL !== 'https://65.20.87.234:5000') {
                     return CONFIG.API_BASE_URL;
                 }
                 
