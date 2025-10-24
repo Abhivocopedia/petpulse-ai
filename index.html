@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#667eea" />
+    <meta name="description" content="PetPulse AI - Intelligent Pet Health Management Platform. Track vaccinations, analyze symptoms, solve behavior problems, and keep your pets healthy." />
+    <meta name="keywords" content="pet health, veterinary, dog health, cat health, vaccination tracker, symptom checker, behavior solver" />
+    <meta name="author" content="PetPulse AI Team" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PetPulse AI - Pet Health Management Platform" />
+    <meta property="og:description" content="AI-powered pet health management. Track vaccinations, analyze symptoms, and solve behavior problems." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abhivocopedia.github.io/petpulse-ai" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>PetPulse AI - Intelligent Pet Health Management</title>
+    
+    <style>
+      /* Loading styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #f8f9fa;
+      }
+      
+      .app-loading {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+      
+      .loading-content {
+        text-align: center;
+      }
+      
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      
+      .loading-content p {
+        opacity: 0.8;
+        font-size: 1.1rem;
+      }
+      
+      /* Backend warning */
+      .backend-warning {
+        background: #fff3cd;
+        color: #856404;
+        padding: 12px 20px;
+        text-align: center;
+        font-weight: 600;
+        border-bottom: 2px solid #ffeaa7;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #f8d7da; color: #721c24;">
+        <h2>JavaScript Required</h2>
+        <p>You need to enable JavaScript to run this application.</p>
+      </div>
+    </noscript>
+    <div id="root">
+      <div class="app-loading">
+        <div class="loading-content">
+          <div class="loading-spinner"></div>
+          <h2>🐾 PetPulse AI</h2>
+          <p>Loading your pet health platform...</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
