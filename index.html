@@ -33,6 +33,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: var(--dark);
+            line-height: 1.6;
         }
 
         .app-container {
@@ -64,11 +65,36 @@
             color: var(--primary);
             margin-bottom: 8px;
             font-weight: 700;
+            font-size: 2rem;
         }
 
         .auth-card p {
             color: var(--secondary);
             margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .demo-credentials {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .demo-credentials h4 {
+            color: #0369a1;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .demo-credentials p {
+            color: #0c4a6e;
+            font-size: 14px;
+            margin: 0;
         }
 
         .form-group {
@@ -90,6 +116,7 @@
             border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s;
+            font-family: inherit;
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
@@ -110,6 +137,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            font-family: inherit;
         }
 
         .btn-primary {
@@ -203,6 +231,7 @@
         .auth-links a {
             color: var(--primary);
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .auth-links a:hover {
@@ -222,11 +251,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .dashboard-header h1 {
             color: var(--primary);
             font-weight: 700;
+            font-size: 1.8rem;
         }
 
         .user-menu {
@@ -266,6 +299,11 @@
             border-radius: 12px;
             box-shadow: var(--shadow);
             text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
         }
 
         .stat-card h3 {
@@ -289,6 +327,7 @@
         .section-header h2 {
             color: var(--dark);
             font-weight: 600;
+            font-size: 1.5rem;
         }
 
         .pets-grid {
@@ -321,7 +360,6 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: var(--primary);
             color: white;
             display: flex;
             align-items: center;
@@ -340,11 +378,18 @@
         .pet-info p {
             color: var(--secondary);
             margin-bottom: 10px;
+            font-size: 0.9rem;
         }
 
         .health-score {
             color: var(--success);
             font-weight: 600;
+        }
+
+        .pet-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .appointment-item, .symptom-item, .activity-item {
@@ -356,6 +401,11 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            transition: transform 0.3s;
+        }
+
+        .appointment-item:hover, .symptom-item:hover, .activity-item:hover {
+            transform: translateX(5px);
         }
 
         .appointment-date {
@@ -412,6 +462,7 @@
             border-radius: 8px;
             font-weight: 600;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .severity-low { background: #d1fae5; color: #065f46; }
@@ -432,11 +483,13 @@
         .ai-analysis-result h4 {
             color: var(--dark);
             margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         .ai-analysis-result h5 {
             color: var(--dark);
             margin: 20px 0 10px 0;
+            font-size: 1.1rem;
         }
 
         .ai-analysis-result ul {
@@ -461,6 +514,7 @@
             z-index: 1000;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
 
         .modal.active {
@@ -487,6 +541,7 @@
 
         .modal-header h3 {
             color: var(--dark);
+            font-size: 1.4rem;
         }
 
         .close-modal {
@@ -495,6 +550,11 @@
             font-size: 1.5em;
             cursor: pointer;
             color: var(--secondary);
+            padding: 5px;
+        }
+
+        .close-modal:hover {
+            color: var(--dark);
         }
 
         /* Responsive Design */
@@ -534,6 +594,10 @@
                 width: 100%;
                 justify-content: flex-end;
             }
+
+            .auth-card {
+                padding: 30px 20px;
+            }
         }
 
         /* Loading States */
@@ -569,6 +633,8 @@
             z-index: 1001;
             transform: translateX(400px);
             transition: transform 0.3s;
+            max-width: 400px;
+            box-shadow: var(--shadow-lg);
         }
 
         .notification.show {
@@ -589,6 +655,8 @@
 
         .no-data i {
             margin-bottom: 15px;
+            font-size: 3em;
+            color: var(--gray);
         }
 
         .connection-status {
@@ -599,6 +667,7 @@
             border-radius: 8px;
             font-size: 12px;
             z-index: 1002;
+            box-shadow: var(--shadow);
         }
 
         .connection-status.connected {
@@ -609,6 +678,75 @@
         .connection-status.disconnected {
             background: var(--danger);
             color: white;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .activity-description {
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .activity-time {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        .symptom-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .symptom-details {
+            flex: 1;
+        }
+
+        .symptom-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .symptom-description {
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .symptom-time {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        .symptom-severity {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -631,62 +769,32 @@
     <script>
         // GitHub Pages Configuration
         const CONFIG = {
-            // 🔧 UPDATE THIS WITH YOUR VULTR SERVER IP/DOMAIN
-            BACKEND_URL: 'http://65.20.87.234/petpulseAI', // Replace with your actual Vultr server IP/domain
-            API_BASE_URL: 'http://65.20.87.234:5000/petpulseAI', // Replace with your actual backend API URL
-
-
-            // Features
-            AI_ENABLED: false,
+            BACKEND_URL: 'http://65.20.87.234:5000',
+            API_BASE_URL: 'http://65.20.87.234:5000/api',
+            AI_ENABLED: true,
             GOOGLE_AUTH_ENABLED: false,
-            
-            // GitHub Pages specific
             IS_GITHUB_PAGES: window.location.hostname.includes('github.io'),
-            REPO_NAME: window.location.pathname.split('/')[1] || 'petpulse-frontend'
+            REPO_NAME: window.location.pathname.split('/')[1] || 'petpulse-ai'
         };
 
-        // Complete Frontend JavaScript Implementation for GitHub Pages
+        // Complete Frontend JavaScript Implementation
         class PetPulseApp {
             constructor() {
-                // Dynamic API URL detection for GitHub Pages
-                this.API_BASE_URL = this.detectApiBaseUrl();
+                this.API_BASE_URL = CONFIG.API_BASE_URL;
                 this.currentUser = null;
                 this.currentPetId = null;
                 this.pets = [];
                 this.appointments = [];
                 this.symptoms = [];
                 this.backendConnected = false;
+                this.currentAnalysis = null;
                 
                 console.log('🚀 PetPulse Frontend Initialized');
                 console.log('📡 API Base URL:', this.API_BASE_URL);
-                console.log('🌐 Environment:', CONFIG.IS_GITHUB_PAGES ? 'GitHub Pages' : 'Local');
                 
                 this.init();
             }
 
-            // Detect the correct API base URL based on environment
-            detectApiBaseUrl() {
-                // If custom backend URL is configured, use it
-                if (CONFIG.API_BASE_URL && CONFIG.API_BASE_URL !== 'https://65.20.87.234:5000') {
-                    return CONFIG.API_BASE_URL;
-                }
-                
-                // Development
-                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                    return 'http://localhost:5000/api';
-                }
-                
-                // GitHub Pages - you MUST set this to your actual Vultr server
-                if (CONFIG.IS_GITHUB_PAGES) {
-                    // 🔧 REPLACE THIS WITH YOUR ACTUAL VULTR SERVER IP/DOMAIN
-                    return 'http://65.20.87.234/api'; // ← UPDATE THIS LINE
-                }
-                
-                // Fallback
-                return '/api';
-            }
-
-            // Initialization
             async init() {
                 await this.checkBackendConnection();
                 this.checkAuthStatus();
@@ -694,14 +802,14 @@
                 this.setupConnectionMonitor();
             }
 
-            // Backend connection check
             async checkBackendConnection() {
                 try {
-                    const response = await fetch(`${this.API_BASE_URL.replace('/api', '')}/health`);
+                    const response = await fetch(`${this.API_BASE_URL}/health`);
                     if (response.ok) {
+                        const data = await response.json();
                         this.backendConnected = true;
                         this.showConnectionStatus('✅ Connected to backend', 'connected');
-                        console.log('✅ Backend connection successful');
+                        console.log('✅ Backend connection successful:', data);
                     } else {
                         throw new Error(`HTTP ${response.status}`);
                     }
@@ -709,12 +817,7 @@
                     this.backendConnected = false;
                     this.showConnectionStatus('❌ Backend connection failed', 'disconnected');
                     console.error('❌ Backend connection failed:', error);
-                    
-                    // Show helpful error message
-                    this.showNotification(
-                        `Cannot connect to backend server. Please make sure your Vultr server is running at: ${this.API_BASE_URL.replace('/api', '')}`, 
-                        'error'
-                    );
+                    this.showNotification(`Cannot connect to backend server at ${this.API_BASE_URL}`, 'error');
                 }
             }
 
@@ -724,7 +827,6 @@
                 statusEl.className = `connection-status ${type}`;
                 statusEl.style.display = 'block';
                 
-                // Auto-hide success messages after 5 seconds
                 if (type === 'connected') {
                     setTimeout(() => {
                         statusEl.style.display = 'none';
@@ -733,14 +835,12 @@
             }
 
             setupConnectionMonitor() {
-                // Check backend connection every 30 seconds
                 setInterval(() => {
                     this.checkBackendConnection();
                 }, 30000);
             }
 
             setupEventListeners() {
-                // Global click handler for dynamic content
                 document.addEventListener('click', (e) => {
                     if (e.target.classList.contains('close-modal')) {
                         this.closeModal(e.target.closest('.modal'));
@@ -748,14 +848,12 @@
                 });
             }
 
-            // Authentication Management
             async checkAuthStatus() {
                 const token = localStorage.getItem('access_token');
                 const userData = localStorage.getItem('user');
 
                 if (token && userData) {
                     try {
-                        // Verify token is still valid
                         const response = await this.apiCall('/auth/me');
                         if (response.ok) {
                             const data = await response.json();
@@ -782,11 +880,9 @@
                 this.showNotification('Session expired. Please login again.', 'warning');
             }
 
-            // API Communication
             async apiCall(endpoint, options = {}) {
-                // Check backend connection first
                 if (!this.backendConnected && !endpoint.includes('/health')) {
-                    throw new Error('Backend server is not available. Please check your connection.');
+                    throw new Error('Backend server is not available.');
                 }
 
                 const token = localStorage.getItem('access_token');
@@ -794,9 +890,12 @@
                 const defaultOptions = {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
                     }
                 };
+
+                if (token) {
+                    defaultOptions.headers['Authorization'] = `Bearer ${token}`;
+                }
 
                 const config = { ...defaultOptions, ...options };
                 
@@ -805,12 +904,8 @@
                 }
 
                 try {
+                    console.log(`📡 Making API call to: ${this.API_BASE_URL}${endpoint}`);
                     const response = await fetch(`${this.API_BASE_URL}${endpoint}`, config);
-                    
-                    // Handle CORS errors
-                    if (response.type === 'opaque') {
-                        throw new Error('CORS error: Backend might not be properly configured for your domain.');
-                    }
                     
                     if (response.status === 401) {
                         const refreshed = await this.refreshToken();
@@ -823,8 +918,9 @@
                         }
                     }
 
-                    // Handle CORS and network errors
                     if (!response.ok && response.status !== 400 && response.status !== 404) {
+                        const errorText = await response.text();
+                        console.error('API error response:', errorText);
                         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                     }
 
@@ -832,11 +928,8 @@
                 } catch (error) {
                     console.error('API call failed:', error);
                     
-                    if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
-                        this.showNotification(
-                            'Network error. Please check if the backend server is running and CORS is configured.', 
-                            'error'
-                        );
+                    if (error.message.includes('Failed to fetch')) {
+                        this.showNotification('Network error. Please check if the backend server is running.', 'error');
                         this.backendConnected = false;
                         this.showConnectionStatus('❌ Network error', 'disconnected');
                     } else {
@@ -867,7 +960,6 @@
                 return false;
             }
 
-            // Authentication Methods
             async handleLogin(event) {
                 event.preventDefault();
                 
@@ -878,6 +970,23 @@
                 
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
+
+                // Demo credentials for testing
+                if (email === 'demo@petpulse.com' && password === 'demopassword123') {
+                    this.storeAuthData({
+                        access_token: 'demo-token',
+                        refresh_token: 'demo-refresh-token',
+                        user: {
+                            id: 'demo-user-id',
+                            name: 'Demo User',
+                            email: 'demo@petpulse.com',
+                            health_score: 95
+                        }
+                    });
+                    this.showDashboard();
+                    this.showNotification('Demo login successful!', 'success');
+                    return;
+                }
 
                 try {
                     const response = await fetch(`${this.API_BASE_URL}/auth/login`, {
@@ -896,16 +1005,9 @@
                         this.showNotification('Login successful!', 'success');
                     } else {
                         this.showNotification(data.error || 'Login failed', 'error');
-                    // If it's a demo account error, offer to create one
-                        if (data.error && data.error.includes('demo account')) {
-                        setTimeout(() => {
-                            if (confirm('Demo account not available. Would you like to create a new account?')) {
-                                this.showRegisterForm();
-                            }
-                        }, 1000);
-                    }
                     }
                 } catch (error) {
+                    console.error('Login error:', error);
                     this.showNotification('Login failed. Please check your connection.', 'error');
                 }
             }
@@ -922,7 +1024,6 @@
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
 
-                // Basic validation
                 if (password.length < 6) {
                     this.showNotification('Password must be at least 6 characters long', 'error');
                     return;
@@ -950,26 +1051,6 @@
                 }
             }
 
-            async handleGoogleAuth() {
-                if (!this.backendConnected) {
-                    this.showNotification('Backend server is not available. Please try again later.', 'error');
-                    return;
-                }
-
-                try {
-                    const response = await fetch(`${this.API_BASE_URL}/auth/google`);
-                    const data = await response.json();
-                    
-                    if (data.auth_url) {
-                        window.location.href = data.auth_url;
-                    } else {
-                        this.showNotification('Google authentication not configured', 'warning');
-                    }
-                } catch (error) {
-                    this.showNotification('Google sign-in failed', 'error');
-                }
-            }
-
             storeAuthData(data) {
                 localStorage.setItem('access_token', data.access_token);
                 localStorage.setItem('refresh_token', data.refresh_token);
@@ -988,13 +1069,20 @@
                 this.showNotification('Logged out successfully', 'info');
             }
 
-            // UI Rendering Methods
             showLoginForm() {
                 document.getElementById('app').innerHTML = `
                     <div class="auth-container">
                         <div class="auth-card">
                             <h1><i class="fas fa-paw"></i> PetPulse AI</h1>
                             <p>Intelligent Pet Health Management</p>
+                            
+                            <div class="demo-credentials">
+                                <h4><i class="fas fa-info-circle"></i> Demo Access</h4>
+                                <p>
+                                    <strong>Email:</strong> demo@petpulse.com<br>
+                                    <strong>Password:</strong> demopassword123
+                                </p>
+                            </div>
                             
                             <form onsubmit="app.handleLogin(event)">
                                 <div class="form-group">
@@ -1011,15 +1099,6 @@
                                     </button>
                                 </div>
                             </form>
-
-                            ${CONFIG.GOOGLE_AUTH_ENABLED ? `
-                                <div class="auth-divider">
-                                    <span>OR</span>
-                                </div>
-                                <button class="btn btn-google" onclick="app.handleGoogleAuth()">
-                                    <i class="fab fa-google"></i> Continue with Google
-                                </button>
-                            ` : ''}
 
                             <div class="auth-links">
                                 <a href="#" onclick="app.showRegisterForm()">Create Account</a>
@@ -1165,13 +1244,11 @@
                     </div>
                 `;
 
-                // Load dashboard data
                 await this.loadDashboardData();
                 await this.loadPets();
                 await this.loadAppointments();
             }
 
-            // Pet Management
             async loadPets() {
                 try {
                     const response = await this.apiCall('/pets');
@@ -1197,7 +1274,7 @@
                 if (this.pets.length === 0) {
                     petsContainer.innerHTML = `
                         <div class="no-data">
-                            <i class="fas fa-paw" style="font-size: 3em; color: var(--gray); margin-bottom: 15px;"></i>
+                            <i class="fas fa-paw"></i>
                             <p>No pets added yet</p>
                             <button class="btn btn-primary" onclick="app.showAddPetModal()">Add Your First Pet</button>
                         </div>
@@ -1250,7 +1327,6 @@
                 this.loadAppointments();
             }
 
-            // Modal Management
             showModal(content) {
                 const modal = document.createElement('div');
                 modal.className = 'modal active';
@@ -1261,7 +1337,6 @@
                 `;
                 document.body.appendChild(modal);
                 
-                // Close modal when clicking outside
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
                         this.closeModal(modal);
@@ -1483,36 +1558,31 @@
                 }
             }
 
-            // Dashboard Functions
             async loadDashboardData() {
                 try {
-                    // Load basic counts
-                    const petsResponse = await this.apiCall('/pets');
-                    if (petsResponse && petsResponse.ok) {
-                        const petsData = await petsResponse.json();
+                    const statsResponse = await this.apiCall('/dashboard/stats');
+                    if (statsResponse && statsResponse.ok) {
+                        const statsData = await statsResponse.json();
                         const totalPetsEl = document.getElementById('totalPets');
-                        if (totalPetsEl) totalPetsEl.textContent = petsData.pets.length;
-                    }
-
-                    const appointmentsResponse = await this.apiCall('/appointments');
-                    if (appointmentsResponse && appointmentsResponse.ok) {
-                        const appointmentsData = await appointmentsResponse.json();
-                        const upcoming = appointmentsData.appointments.filter(apt => 
-                            new Date(apt.appointment_date) >= new Date()
-                        );
                         const upcomingAppointmentsEl = document.getElementById('upcomingAppointments');
-                        if (upcomingAppointmentsEl) upcomingAppointmentsEl.textContent = upcoming.length;
+                        const healthAlertsEl = document.getElementById('healthAlerts');
+                        
+                        if (totalPetsEl) totalPetsEl.textContent = statsData.total_pets || 0;
+                        if (upcomingAppointmentsEl) upcomingAppointmentsEl.textContent = statsData.upcoming_appointments || 0;
+                        if (healthAlertsEl) healthAlertsEl.textContent = statsData.health_alerts || 0;
                     }
 
-                    // Set health alerts count
-                    const healthAlertsEl = document.getElementById('healthAlerts');
-                    if (healthAlertsEl) healthAlertsEl.textContent = '0';
-
-                    // Load recent activity
                     await this.loadRecentActivity();
 
                 } catch (error) {
                     console.error('Error loading dashboard data:', error);
+                    const totalPetsEl = document.getElementById('totalPets');
+                    const upcomingAppointmentsEl = document.getElementById('upcomingAppointments');
+                    const healthAlertsEl = document.getElementById('healthAlerts');
+                    
+                    if (totalPetsEl) totalPetsEl.textContent = '0';
+                    if (upcomingAppointmentsEl) upcomingAppointmentsEl.textContent = '0';
+                    if (healthAlertsEl) healthAlertsEl.textContent = '0';
                 }
             }
 
@@ -1521,7 +1591,7 @@
                 if (!container) return;
 
                 try {
-                    const response = await this.apiCall('/activity');
+                    const response = await this.apiCall('/dashboard/activity');
                     if (response.ok) {
                         const data = await response.json();
                         if (data.activities && data.activities.length > 0) {
@@ -1538,30 +1608,31 @@
                                 </div>
                             `).join('');
                         } else {
-                            container.innerHTML = `
-                                <div class="no-data">
-                                    <i class="fas fa-history" style="font-size: 3em; color: var(--gray); margin-bottom: 15px;"></i>
-                                    <p>No recent activity</p>
-                                </div>
-                            `;
+                            this.showDefaultActivity(container);
                         }
+                    } else {
+                        this.showDefaultActivity(container);
                     }
                 } catch (error) {
-                    container.innerHTML = `
-                        <div class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div class="activity-content">
-                                <div class="activity-title">Welcome to PetPulse AI</div>
-                                <div class="activity-description">Start by adding your pets and tracking their health</div>
-                            </div>
-                        </div>
-                    `;
+                    this.showDefaultActivity(container);
                 }
             }
 
-            // Appointment Management
+            showDefaultActivity(container) {
+                container.innerHTML = `
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Welcome to PetPulse AI</div>
+                            <div class="activity-description">Start by adding your pets and tracking their health</div>
+                            <div class="activity-time">Just now</div>
+                        </div>
+                    </div>
+                `;
+            }
+
             async loadAppointments() {
                 try {
                     const response = await this.apiCall('/appointments');
@@ -1587,7 +1658,7 @@
                 if (upcomingAppointments.length === 0) {
                     container.innerHTML = `
                         <div class="no-data">
-                            <i class="fas fa-calendar" style="font-size: 3em; color: var(--gray); margin-bottom: 15px;"></i>
+                            <i class="fas fa-calendar"></i>
                             <p>No upcoming appointments</p>
                             <button class="btn btn-primary" onclick="app.showAddAppointmentModal()">Schedule Appointment</button>
                         </div>
@@ -1810,12 +1881,11 @@
                 }
             }
 
-            // Health Monitoring
             async loadPetHealthData() {
                 if (!this.currentPetId) return;
                 
                 try {
-                    const response = await this.apiCall(`/pets/${this.currentPetId}/health`);
+                    const response = await this.apiCall(`/health/pets/${this.currentPetId}/health`);
                     
                     if (response.ok) {
                         const data = await response.json();
@@ -1849,7 +1919,7 @@
                 } else {
                     container.innerHTML = `
                         <div class="no-data">
-                            <i class="fas fa-heartbeat" style="font-size: 3em; color: var(--gray); margin-bottom: 15px;"></i>
+                            <i class="fas fa-heartbeat"></i>
                             <p>No health records yet</p>
                             <button class="btn btn-primary" onclick="app.showSymptomCheckerModal()">Record Symptoms</button>
                         </div>
@@ -1964,7 +2034,7 @@
                 };
 
                 try {
-                    const response = await this.apiCall('/health/analyze', {
+                    const response = await this.apiCall('/ai/analyze', {
                         method: 'POST',
                         body: symptomData
                     });
@@ -2019,7 +2089,6 @@
                     </div>
                 `);
                 
-                // Store the current analysis for saving
                 this.currentAnalysis = analysis;
             }
 
@@ -2046,7 +2115,6 @@
                 }
             }
 
-            // Notification System
             showNotification(message, type = 'info') {
                 const notification = document.createElement('div');
                 notification.className = `notification ${type}`;
@@ -2054,10 +2122,8 @@
                 
                 document.getElementById('notificationContainer').appendChild(notification);
                 
-                // Animate in
                 setTimeout(() => notification.classList.add('show'), 100);
                 
-                // Auto remove after 5 seconds
                 setTimeout(() => {
                     notification.classList.remove('show');
                     setTimeout(() => notification.remove(), 300);
